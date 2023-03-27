@@ -1,0 +1,93 @@
+.petcard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  background-color: #ffff;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #d5d5d5;
+
+  .noticeNo {
+    width: 100%;
+    background-color: #f8dcd1d9; //#ff4d30;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: rgb(46, 34, 34);
+    padding-block: 0.3rem;
+    white-space: nowrap;
+
+    span {
+      font-weight: 700;
+    }
+  }
+  .box {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+
+    .img-container {
+      width: 40%;
+      // height: 200px;
+      height: auto;
+      cursor: pointer;
+      img {
+        width: 100%;
+        // height: 100%;
+        // object-fit: fill;
+
+        // 뭐지 이게? 이걸 하니까 알아서 맞추는듯
+        overflow-clip-margin: content-box;
+        overflow: clip;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.3rem;
+      .row {
+        // width: 100%;
+        display: flex;
+        padding-bottom: 0.2rem;
+
+        span:nth-child(1) {
+          width: 6rem;
+          border-bottom: 1px solid #ccd7e6;
+          margin-right: 1rem;
+        }
+      }
+
+      .like-btn {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: white;
+        background-color: #706f7b;
+        padding: 1rem 1rem;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1.4rem;
+        transition: all 0.3s;
+        box-shadow: 3px 3px 5px #efe9e9;
+        cursor: pointer;
+
+        &.active {
+          background-color: #ff4d30;
+        }
+
+        &:hover {
+          background-color: #e9381d;
+        }
+      }
+    }
+  }
+}

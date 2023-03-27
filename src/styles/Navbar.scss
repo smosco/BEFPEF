@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 4rem;
+  background-color: transparent;
+  z-index: 99999;
+
+  .logo {
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+
+    .icon {
+      width: 5rem;
+      height: 5rem;
+      color: #ff4d30;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 2rem;
+
+    li {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #010103;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #ff4d30;
+      }
+    }
+  }
+}

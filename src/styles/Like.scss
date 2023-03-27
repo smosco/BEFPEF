@@ -1,0 +1,22 @@
+.like {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 1.5rem;
+  right: 1.5rem;
+
+  .heart {
+    font-size: 2rem;
+    &.t {
+      color: white;
+    }
+    &.f {
+      color: black;
+    }
+  }
+}
