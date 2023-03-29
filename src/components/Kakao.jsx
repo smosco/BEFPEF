@@ -41,5 +41,5 @@ export default function Kakao({ lat, log, kind }) {
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
   }, []);
-  return <div id="map" style={{ width: "500px", height: "500px" }}></div>;
+  return <div id="map" style={{ width: "100%", height: "500px" }}></div>;
 }
