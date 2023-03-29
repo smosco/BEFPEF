@@ -4,9 +4,15 @@ import "../styles/Navbar.scss";
 import { SiDatadog } from "react-icons/si";
 
 export default function Navbar() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">
+      <Link to="/" className="logo" onClick={scrollToTop}>
         <SiDatadog className="icon" />
         <h1>펫프</h1>
       </Link>

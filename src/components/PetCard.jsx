@@ -59,8 +59,8 @@ export default function PetCard({ pet }) {
 
   return (
     <div key={pet.ABDM_IDNTFY_NO} className="petcard">
-      <div className="ABDM_IDNTFY_NO">
-        <span>고유번호</span>
+      <div className="noticeNo">
+        <span>고유번호 &nbsp;</span>
         <span>{pet.ABDM_IDNTFY_NO}</span>
       </div>
       <Like id={pet.ABDM_IDNTFY_NO} pet={pet} />

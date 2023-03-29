@@ -54,14 +54,14 @@ export default function Current() {
   // }, []);
 
   return (
-    <div className="bg-[#f8f8f8] pt-8 pb-16 px-8">
+    <div className="current-container">
       <h1 className="text-4xl font-bold mb-8">
         <b className="text-[#ff4d30]">" &nbsp;</b>
         공고 기한이 하루 밖에 남지 않은 친구들이에요
         <b className="text-[#ff4d30]">&nbsp;"</b>
       </h1>
       <Swiper
-        slidesPerView={4}
+        slidesPerView={3}
         grid={{
           rows: 1,
         }}

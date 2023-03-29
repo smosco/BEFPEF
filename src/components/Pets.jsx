@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Pagination from "./Pagination";
 import PetCard from "./PetCard";
 // import { useLikes } from "../context/LikeContext";
+import "../styles/Pets.scss";
 
 export default function Pets({ pets }) {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(8);
+  const [postPerPage, setPostPerPage] = useState(9);
 
   // const { likes, handleAdd, handleDelete } = useLikes();
 
@@ -19,8 +20,8 @@ export default function Pets({ pets }) {
   const currentPosts = pets.slice(firstPostIndex, lastPostIndex);
 
   return (
-    <div className="flex flex-col gap-16">
-      <div className="grid grid-cols-3 gap-8">
+    <div className="pets-container">
+      <div className="pets">
         {currentPosts.map((pet) => (
           <PetCard
             key={pet.ABDM_IDNTFY_NO}

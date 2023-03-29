@@ -4,6 +4,7 @@ import Pets from "../components/Pets";
 import Current from "../components/Current";
 import { format, agoDate, dateForm } from "../util/DateFormatFn";
 import Loader from "../components/Loader";
+import "../styles/Home.scss";
 
 export default function Home() {
   const [query, setQuery] = useState({
@@ -93,11 +94,11 @@ export default function Home() {
   // }, []);
 
   return (
-    <div className="flex flex-col gap-16 px-16">
+    <div className="container">
       <Current />
       <Category query={query} onChange={handleChange} onSubmit={handleSubmit} />
       {pets.length === 0 && <Loader />}
-      <p className="text-3xl text-gray-500">전체 검색결과 &nbsp;{count}</p>
+      <p className="count">전체 검색결과 &nbsp;{count}</p>
       <Pets pets={pets} />
     </div>
   );
