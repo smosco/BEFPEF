@@ -11,6 +11,10 @@
   border-radius: 5px;
   border: 1px solid #d5d5d5;
 
+  &:hover {
+    background-color: #ffcfc749;
+  }
+
   .noticeNo {
     width: 100%;
     background-color: #f8dcd1d9; //#ff4d30;

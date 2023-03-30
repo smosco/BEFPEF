@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import PetCard from "./PetCard";
 import Pets from "./Pets";
+import "../styles/Shelter.scss";
 
 const { kakao } = window;
 
 export default function Shelter() {
   const [pets, setPets] = useState([]);
+  const [shelter, setShelter] = useState("");
   useEffect(() => {
     const mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
@@ -132,7 +133,7 @@ export default function Shelter() {
         // 클릭한 위도, 경도 정보를 가져옵니다
         // console.log(marker.Gb);
         // fetch(
-        //   `https://openapi.gg.go.kr/AbdmAnimalProtect?KEY=029f99a01fbb42dba52abb947db9975e&Type=json&SHTER_NM=${marker.Gb}&pSize=20`
+        //   `https://openapi.gg.go.kr/AbdmAnimalProtect?KEY=029f99a01fbb42dba52abb947db9975e&Type=json&SHTER_NM=${marker.Gb}&STATE_NM=보호중&pSize=20`
         // )
         //   .then((res) => res.json())
         //   .then((data) => {
@@ -146,7 +147,7 @@ export default function Shelter() {
         //     //     : ""
         //     // );
         //   });
-
+        setShelter(marker.Gb);
         fetch(`data/shelterPets.json`)
           .then((res) => res.json())
           .then((data) => {
@@ -165,9 +166,14 @@ export default function Shelter() {
   }, []);
 
   return (
-    <>
-      <div id="map" style={{ width: "500px", height: "500px" }}></div>
+    <div className="shelter-container">
+      <div id="map"></div>
+      {shelter && (
+        <p>
+          <span>{shelter}</span>에서 친구들이 기다리고 있어요
+        </p>
+      )}
       <Pets pets={pets} />
-    </>
+    </div>
   );
 }
