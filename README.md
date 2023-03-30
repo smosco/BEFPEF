@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+postapi사용하면서 데이터를 확인하면서 진행
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+반려견 입양시 유기동물을 쉽게 찾아볼 수 있는 웹사이트 제작
 
-## Available Scripts
+기존 유기동물종합정보시스템이나 사이트에서 위치가 잘 드러나지 않아서 가까운 곳에 보호되고 있는 동물을 찾기 어려운 문제점이 있음
 
-In the project directory, you can run:
+이를 해결하기 위해 경기도 내의 보호소 25곳의 위치를 카카오 맵으로 보여주고 맵 위의 보호소를 클릭하면 특정 보호소에 있는 보호되고 있는 유기동물을 보여줌
 
-### `yarn start`
+⇒ 카카오맵 api를 사용해서 경기도내 보호소 25곳을 보여주고 marker에 event를 추가해서 클릭했을때 특정 보호소 이름으로 정보를 불러오도록 함
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+또한 관심있게 보고 있는 동물들을 다시 볼 수 있는 책갈피가 없어 다시 찾기 어려운 상황을 해결하기 위해 책갈피 기능도 추가함
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+⇒ 로컬 스토리지 사용함 include 매소드를 사용해 local에 특정 item이 있는지 확인하려했으나 불가능함을 알고 id를 받아 확인함, id로 open api에서 정보를 받아올 수 없어서 id와 items를 따로 로컬에 저장하고 불러옮으로써 해결함
 
-### `yarn test`
+⇒ context api사용해서 petcard, petdetail 에서 계속해서 fetch하지 않고 사용할 수 있게 함
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+select의 options로 경기도내 시군구, 날짜, 품종별로 조회할 수 있도록 함
 
-### `yarn build`
+또한 유기견은 보통 10일 정도의 공고기한을 갖는데 이후에 자연사, 안락사, 반환등이 결정된다. 따라서 공고기한이 하루 이틀 남은 유기동물을 홈에서 보여주도록 만듦
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+⇒ 오늘 날짜를 받아서 10, 11일 전의 날짜를 query로 네트워크 통신하도록 함
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+페이지네이션을 라이브러리 사용하지 않고 직접 구현함
