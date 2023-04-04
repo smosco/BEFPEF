@@ -5,7 +5,7 @@ import "../styles/Like.scss";
 
 export default function Like({ id, pet }) {
   const { likes, likeItems, handleAdd, handleDelete } = useLikes();
-  // const [like, setLike] = useState(false);
+
   const [like, setLike] = useState(() => {
     if (likes.includes(id)) {
       return true;
@@ -16,7 +16,7 @@ export default function Like({ id, pet }) {
 
   const toggleLike = () => {
     if (like) {
-      handleDelete(id, pet);
+      handleDelete(id);
       setLike((prev) => !prev);
     } else {
       handleAdd(id, pet);
