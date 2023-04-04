@@ -1,12 +1,37 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getCurrent } from "../api/axios";
 import PetCard from "./PetCard";
 import "../styles/Slider.scss";
 
 export default function Slider() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
   const [current, setCurrent] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [postPerPage, setPostPerPage] = useState("4");
+  const [postPerPage, setPostPerPage] = useState(() => {
+    if (windowWidth < 768) {
+      return "1";
+    } else if (windowWidth < 1024) {
+      return "2";
+    } else {
+      return "3";
+    }
+  });
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    if (windowWidth < 768) {
+      setPostPerPage("1");
+    } else if (windowWidth < 1024) {
+      setPostPerPage("2");
+    } else {
+      setPostPerPage("3");
+    }
+  }, [windowWidth]);
 
   useEffect(() => {
     getCurrent().then((data) => setCurrent(data[1].row));
