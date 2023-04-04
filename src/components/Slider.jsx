@@ -6,7 +6,7 @@ import "../styles/Slider.scss";
 export default function Slider() {
   const [current, setCurrent] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [postPerPage, setPostPerPage] = useState("3");
+  const [postPerPage, setPostPerPage] = useState("4");
 
   useEffect(() => {
     getCurrent().then((data) => setCurrent(data[1].row));

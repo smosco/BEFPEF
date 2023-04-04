@@ -38,12 +38,12 @@ const regions = [
   "화성시",
 ];
 
-export default function Category({ query, onChange, onSubmit }) {
+export default function Category({ query, onChange }) {
   const { PBLANC_BEGIN_DE, PBLANC_END_DE, SIGUN_NM, SPECIES_NM } = query;
 
   return (
     <div className="category-container">
-      <h1>SEARCH</h1>
+      <h2>카테고리</h2>
       <div className="category">
         <form className="form" onSubmit={(e) => e.preventDefault()}>
           {/* 공고 시작, 마감일  */}

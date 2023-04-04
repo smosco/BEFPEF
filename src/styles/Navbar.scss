@@ -13,22 +13,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1800px;
+    max-width: 1500px;
     margin-inline: auto;
 
     .logo {
       width: 12rem;
       display: flex;
-      justify-content: space-between;
 
       .icon {
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         color: #ff4d30;
       }
 
       h1 {
-        font-size: 3rem;
+        margin-left: 1rem;
+        font-size: 2.5rem;
         font-weight: 700;
       }
     }
@@ -37,12 +37,12 @@
       display: flex;
       justify-content: space-between;
       list-style: none;
-      gap: 2rem;
+      gap: 1rem;
 
       li {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 500;
-        color: #010103;
+        color: black;
         text-decoration: none;
         cursor: pointer;
         transition: all 0.3s;

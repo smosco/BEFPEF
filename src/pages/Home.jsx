@@ -33,7 +33,7 @@ export default function Home() {
   }, [query]);
 
   return (
-    <div className="container">
+    <div className="home-container">
       {/* <Current /> */}
       <Slider />
       <Category query={query} onChange={handleChange} />

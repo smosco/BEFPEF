@@ -1,14 +1,14 @@
-.container {
+.home-container {
   display: flex;
-  max-width: 1800px;
+  max-width: 1500px;
   margin-inline: auto;
   flex-direction: column;
-  gap: 4rem;
-  // padding-inline: 4rem;
+  gap: 2rem;
+  padding-inline: 4rem;
 
   .count {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: gray;
   }
 }

@@ -1,5 +1,6 @@
 .description-container {
-  max-width: 1800px;
+  max-width: 1500px;
+  width: 100%;
   margin: 8rem auto;
   display: flex;
   flex-direction: column;
@@ -17,6 +18,8 @@
     }
     .img-container {
       position: relative;
+      border-radius: 1rem;
+      height: fit-content;
       overflow: hidden;
       margin-bottom: 4rem;
 
@@ -28,30 +31,6 @@
       img {
         width: 100%;
         object-fit: contain;
-      }
-
-      .like-btn {
-        font-size: 2rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 600;
-        color: white;
-        background-color: #706f7b;
-        padding: 1rem 1rem;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        margin-top: 1.4rem;
-        transition: all 0.3s;
-        box-shadow: 6px 6px 0 #efe9e9;
-
-        &.active {
-          background-color: #ff4d30;
-        }
-
-        &:hover {
-          background-color: #e9381d;
-        }
       }
     }
 
@@ -104,7 +83,7 @@
   .location {
     font-size: 1.5rem;
     padding-inline: 4rem;
-
+    color: rgb(105, 105, 105);
     p {
       padding-bottom: 2rem;
     }

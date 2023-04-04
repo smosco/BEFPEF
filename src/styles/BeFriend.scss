@@ -1,6 +1,14 @@
 .likes-container {
-  max-width: 1800px;
+  max-width: 1500px;
+  width: 100%;
   margin-inline: auto;
-  padding: 4rem;
-  margin-top: 8rem;
+  margin-top: 10rem;
+  padding-inline: 4rem;
+
+  p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
 }
