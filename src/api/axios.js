@@ -36,7 +36,7 @@ export const getFakePets = async (url) => {
 export const getCurrent = async () => {
   try {
     const data = await axios
-      .get(`${BASE_URL}&PBLANC_BEGIN_DE=${agoDate(new Date(), 10)}&pSize=10`)
+      .get(`${BASE_URL}&PBLANC_BEGIN_DE=${agoDate(new Date(), 10)}&pSize=12`)
       .then((res) =>
         res.data.AbdmAnimalProtect ? res.data.AbdmAnimalProtect : []
       );

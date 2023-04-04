@@ -1,0 +1,37 @@
+.slider-container {
+  width: 1500px;
+  overflow-x: hidden;
+  margin-inline: auto;
+  overflow: hidden;
+  margin-top: 10rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .slides {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .button-container {
+    text-align: center;
+
+    button {
+      background: transparent;
+      padding: 1rem;
+      margin: 1rem;
+      color: burlywood;
+      border-radius: 10px;
+      border: 1px solid burlywood;
+      cursor: pointer;
+      &:hover {
+        background-color: burlywood;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Category from "../components/Category";
 import Pets from "../components/Pets";
 import Current from "../components/Current";
-import { format, agoDate, dateForm } from "../util/DateFormatFn";
-import Loader from "../components/Loader";
+import { agoDate } from "../util/DateFormatFn";
 import "../styles/Home.scss";
 import { getPets } from "../api/axios";
 import NoResult from "../components/NoResult";
+import Slider from "../components/Slider";
 
 export default function Home() {
   const [query, setQuery] = useState({
@@ -34,7 +34,8 @@ export default function Home() {
 
   return (
     <div className="container">
-      <Current />
+      {/* <Current /> */}
+      <Slider />
       <Category query={query} onChange={handleChange} />
       <p className="count">{count} 마리의 친구들이 기다리고 있어요🐈🐕🦎</p>
       {pets.length === 0 && <NoResult />}

@@ -13,6 +13,10 @@ export default function Shelter() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    getShelterPets(shelter).then((data) => {
+      setPets(data.length === 0 ? [] : data[1].row);
+      setCount(data.length === 0 ? "0" : data[0].head[0].list_total_count);
+    });
     const mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
         center: new kakao.maps.LatLng(37.3658, 126.988), // 지도의 중심좌표
@@ -145,7 +149,7 @@ export default function Shelter() {
 
   return (
     <div className="shelter-container">
-      <div id="map"></div>
+      <div id="map" style={{ width: "100%", height: "500px" }}></div>
       {shelter && (
         <p>
           <span>{shelter}</span>에서 친구들이 기다리고 있어요
