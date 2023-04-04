@@ -5,31 +5,31 @@
   width: 100%;
   position: relative;
   background-color: #ffff;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
   height: auto;
   border-radius: 5px;
   border: 1px solid #d5d5d5;
+  transition: all 0.05s ease-in;
 
   &:hover {
-    background-color: #ffcfc749;
+    background-color: #fbe3df49;
+    transform: scale(1.02);
   }
 
   .noticeNo {
     width: 100%;
-    background-color: #f8dcd1d9; //#ff4d30;
-    font-size: 1.6rem;
+    background-color: #ffeae0d9; //#ff4d30;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     color: rgb(46, 34, 34);
     padding-block: 0.3rem;
     white-space: nowrap;
 
     span {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 600;
     }
   }
   .box {
@@ -51,13 +51,13 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      font-size: 1.3rem;
+      font-size: 1rem;
       .row {
         display: flex;
         padding-bottom: 0.2rem;
 
         span:nth-child(1) {
-          width: 6rem;
+          width: 5rem;
           border-bottom: 1px solid #ccd7e6;
           margin-right: 1rem;
         }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useLikes } from "../context/LikeContext";
+import { dateFormat, sexFormat } from "../util/format";
 import "../styles/PetCard.scss";
 import no from "../asset/no-image.jpg";
 import Like from "./Like";
@@ -57,49 +57,60 @@ export default function PetCard({ pet }) {
   //   localStorage.setItem("likes", JSON.stringify(likes));
   // }, [likes]);
 
+  const {
+    ABDM_IDNTFY_NO,
+    THUMB_IMAGE_COURS,
+    RECEPT_DE,
+    SPECIES_NM,
+    SEX_NM,
+    DISCVRY_PLC_INFO,
+    SFETR_INFO,
+    STATE_NM,
+  } = pet;
+
   return (
-    <div key={pet.ABDM_IDNTFY_NO} className="petcard">
+    <div key={ABDM_IDNTFY_NO} className="petcard">
       <div className="noticeNo">
         <span>고유번호 &nbsp;</span>
-        <span>{pet.ABDM_IDNTFY_NO}</span>
+        <span>{ABDM_IDNTFY_NO}</span>
       </div>
-      <Like id={pet.ABDM_IDNTFY_NO} pet={pet} />
+      <Like id={ABDM_IDNTFY_NO} pet={pet} />
       <div className="box">
         <div
           className="img-container"
           onClick={() =>
-            navigate(`/petDetail/${pet.ABDM_IDNTFY_NO}`, { state: { pet } })
+            navigate(`/petDetail/${ABDM_IDNTFY_NO}`, { state: { pet } })
           }
         >
           <img
-            src={`${pet.THUMB_IMAGE_COURS ? pet.THUMB_IMAGE_COURS : no}`}
-            alt={pet.ABDM_IDNTFY_NO}
+            src={`${THUMB_IMAGE_COURS ? THUMB_IMAGE_COURS : no}`}
+            alt={ABDM_IDNTFY_NO}
           />
         </div>
         <div className="description">
           <div className="row">
             <span>접수일시</span>
-            <span>{pet.RECEPT_DE}</span>
+            <span>{dateFormat(RECEPT_DE)}</span>
           </div>
           <div className="row">
             <span>픔종</span>
-            <span>{pet.SPECIES_NM}</span>
+            <span>{SPECIES_NM.split("]")[1]}</span>
           </div>
           <div className="row">
             <span>성별</span>
-            <span>{pet.SEX_NM}</span>
+            <span>{sexFormat(SEX_NM)}</span>
           </div>
           <div className="row">
             <span>빌견장소</span>
-            <span>{pet.DISCVRY_PLC_INFO.substr(0, 10)}</span>
+            <span>{DISCVRY_PLC_INFO.substr(0, 10)}</span>
           </div>
           <div className="row">
             <span>특징</span>
-            <span>{pet.SFETR_INFO.substr(0, 10)}</span>
+            <span>{SFETR_INFO.substr(0, 10)}</span>
           </div>
           <div className="row">
             <span>상태</span>
-            <span>{pet.STATE_NM}</span>
+            <span>{STATE_NM}</span>
           </div>
           {/* 
           <div
