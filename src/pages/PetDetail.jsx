@@ -25,7 +25,6 @@ export default function PetDetail() {
         REFINE_ROADNM_ADDR,
         SHTER_TELNO,
         PROTECT_PLC,
-        JURISD_INST_NM,
         IMAGE_COURS,
         REFINE_WGS84_LAT,
         REFINE_WGS84_LOGT,
@@ -33,6 +32,11 @@ export default function PetDetail() {
       pet,
     },
   } = useLocation();
+
+  // 페이지 들어오면 위로 이동
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="description-container">
