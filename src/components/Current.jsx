@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { agoDate, format } from "../util/DateFormatFn";
 import PetCard from "./PetCard";
+import { getCurrent } from "../api/axios";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,49 +10,12 @@ import "swiper/css/pagination";
 
 import { Grid, Pagination } from "swiper";
 
-const date = new Date();
-
 export default function Current() {
   const [current, setCurrent] = useState([]);
 
-  console.log(current);
-
-  // useEffect(() => {
-  //   fetch(
-  //     `https://openapi.gg.go.kr/AbdmAnimalProtect?KEY=029f99a01fbb42dba52abb947db9975e&Type=json&PBLANC_BEGIN_DE=${format(
-  //       date,
-  //       "-"
-  //     )}&pSize=10`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setCurrent(data.AbdmAnimalProtect[1].row);
-  //     });
-  // }, []);
-
   useEffect(() => {
-    fetch(`data/current.json`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCurrent(data.AbdmAnimalProtect[1].row);
-      });
+    getCurrent().then((data) => setCurrent(data[1].row));
   }, []);
-  // useEffect(() => {
-  //   const check = localStorage.getItem("current");
-  //   if (check) {
-  //     setCurrent(JSON.parse(check));
-  //   } else {
-  //     fetch("data/current.json")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         localStorage.setItem(
-  //           "current",
-  //           JSON.stringify(data.response.body.items.item)
-  //         );
-  //         setCurrent(data.response.body.items.item);
-  //       });
-  //   }
-  // }, []);
 
   return (
     <div className="current-container">

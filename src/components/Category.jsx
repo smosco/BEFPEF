@@ -45,8 +45,8 @@ export default function Category({ query, onChange, onSubmit }) {
     <div className="category-container">
       <h1>SEARCH</h1>
       <div className="category">
-        <form className="form" onSubmit={onSubmit}>
-          {/* 유기 날짜  */}
+        <form className="form" onSubmit={(e) => e.preventDefault()}>
+          {/* 공고 시작, 마감일  */}
           <div className="box-form">
             <label className="label" htmlFor="bgnde">
               <FaCalendarAlt className="icon" />
@@ -72,7 +72,7 @@ export default function Category({ query, onChange, onSubmit }) {
               ></input>
             </div>
           </div>
-          {/* 시도 */}
+          {/* 경기도내 시군구 */}
           <div className="box-form">
             <label className="label" htmlFor="SIGUN_NM">
               <MdLocationOn className="icon" />
@@ -108,14 +108,14 @@ export default function Category({ query, onChange, onSubmit }) {
               value={SPECIES_NM}
               onChange={onChange}
             >
-              <option value="">전체</option>
-              <option value="[개]">개</option>
+              <option value="">모두</option>
+              <option value="[개]">강아지</option>
               <option value="[고양이]">고양이</option>
-              <option value="[기타축종]">기타</option>
+              <option value="[기타축종]">다른친구들</option>
             </select>
           </div>
           <button className="button" type="submit">
-            검색
+            조회
           </button>
         </form>
       </div>

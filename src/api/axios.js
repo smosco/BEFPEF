@@ -1,4 +1,5 @@
 import axios from "axios";
+import { agoDate } from "../util/DateFormatFn";
 
 export const BASE_URL =
   "https://openapi.gg.go.kr/AbdmAnimalProtect?KEY=029f99a01fbb42dba52abb947db9975e&Type=json";
@@ -30,4 +31,17 @@ export const getFakePets = async (url) => {
     .get(url) //
     .then((res) => (res.AbdmAnimalProtect ? res.AbdmAnimalProtect : []));
   return data; //꼭 리턴 해주기
+};
+
+export const getCurrent = async () => {
+  try {
+    const data = await axios
+      .get(`${BASE_URL}&PBLANC_BEGIN_DE=${agoDate(new Date(), 10)}&pSize=10`)
+      .then((res) =>
+        res.data.AbdmAnimalProtect ? res.data.AbdmAnimalProtect : []
+      );
+    return data; //꼭 리턴 해주기
+  } catch (err) {
+    console.log(err.message);
+  }
 };

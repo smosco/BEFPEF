@@ -6,57 +6,38 @@ import { format, agoDate, dateForm } from "../util/DateFormatFn";
 import Loader from "../components/Loader";
 import "../styles/Home.scss";
 import { getPets } from "../api/axios";
+import NoResult from "../components/NoResult";
 
 export default function Home() {
   const [query, setQuery] = useState({
-    PBLANC_BEGIN_DE: "2023-03-24",
+    PBLANC_BEGIN_DE: agoDate(new Date(), 12),
     PBLANC_END_DE: "",
     SIGUN_NM: "",
     SPECIES_NM: "",
   });
   const [pets, setPets] = useState([]);
   const [count, setCount] = useState("");
+  console.log(pets);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setQuery({ ...query, [name]: value });
   };
 
-  // 제출할때마다 다시 패치해준다
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    getPets(query).then((data) => {
-      setPets(data[1].row);
-      setCount(data[0].head[0].list_total_count);
-    });
-  };
-
-  // 이게 없으면 처음 들어왔을떄 새로고침할때 패치가 안된다. 쿼리는 디펜던시에서 제거 제출도 안했는데 바뀜
+  // 처음 들어왔을떄 새로고침할때 패치해준다. 쿼리를 디펜던시로 넣으면 계속 패치해옴.
   useEffect(() => {
     getPets(query).then((data) => {
-      setPets(data[1].row);
-      setCount(data[0].head[0].list_total_count);
+      setPets(data.length === 0 ? [] : data[1].row);
+      setCount(data.length === 0 ? "0" : data[0].head[0].list_total_count);
     });
-  }, []);
-
-  console.log(pets, "pets보내기 전에 확인", count);
-
-  // useEffect(() => {
-  //   fetch("data/pets.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setPets(data.response.body.items.item);
-  //       setCount(data.response.body.totalCount);
-  //     });
-  // }, []);
+  }, [query]);
 
   return (
     <div className="container">
       <Current />
-      <Category query={query} onChange={handleChange} onSubmit={handleSubmit} />
-      {pets.length === 0 && <Loader />}
-      <p className="count">전체 검색결과 &nbsp;{count}</p>
+      <Category query={query} onChange={handleChange} />
+      <p className="count">{count} 마리의 친구들이 기다리고 있어요🐈🐕🦎</p>
+      {pets.length === 0 && <NoResult />}
       <Pets pets={pets} />
     </div>
   );
