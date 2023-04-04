@@ -8,7 +8,7 @@ export function LikesProvider({ children }) {
   const [likeItems, setLikeItems] = useState(readLikesFromLocal("likeItems"));
 
   const handleAdd = (id, pet) => {
-    setLikes({ ...likes, id });
+    setLikes([...likes, id]); //꼭 배열로 해야함, 객체로 하면 안됨
     setLikeItems([...likeItems, pet]);
   };
 

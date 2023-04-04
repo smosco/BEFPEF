@@ -45,3 +45,16 @@ export const getCurrent = async () => {
     console.log(err.message);
   }
 };
+
+export const getShelterPets = async (shelter) => {
+  try {
+    const data = await axios
+      .get(`${BASE_URL}&SHTER_NM=${shelter}&STATE_NM=보호중`, options)
+      .then((res) =>
+        res.data.AbdmAnimalProtect ? res.data.AbdmAnimalProtect : []
+      );
+    return data; //꼭 리턴 해주기
+  } catch (err) {
+    console.log(err.message);
+  }
+};

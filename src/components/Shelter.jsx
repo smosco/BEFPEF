@@ -1,24 +1,29 @@
 import React, { useState, useEffect } from "react";
 import Pets from "./Pets";
 import "../styles/Shelter.scss";
+import { getShelterPets } from "../api/axios";
+import NoResult from "./NoResult";
 
 const { kakao } = window;
 
 export default function Shelter() {
   const [pets, setPets] = useState([]);
-  const [shelter, setShelter] = useState("");
+  const [count, setCount] = useState("");
+  const [shelter, setShelter] = useState("한국동물구조관리협회");
+
   useEffect(() => {
+    window.scrollTo(0, 0);
     const mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
-        center: new kakao.maps.LatLng(37.633898, 127.2079274), // 지도의 중심좌표
-        level: 3, // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(37.3658, 126.988), // 지도의 중심좌표
+        level: 11, // 지도의 확대 레벨
       };
 
     const map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
     const positions = [
       {
-        title: "가평군동물보호센터",
+        title: "가평군유기동물보호소",
         latlng: new kakao.maps.LatLng(37.8459543, 127.4991358),
       },
       {
@@ -26,8 +31,12 @@ export default function Shelter() {
         latlng: new kakao.maps.LatLng(37.6496069, 126.870066),
       },
       {
-        title: "광주TNR동물병원",
+        title: "광주TNR동물병원송정",
         latlng: new kakao.maps.LatLng(37.41746097, 127.2752964),
+      },
+      {
+        title: "수원시 동물보호센터",
+        latlng: new kakao.maps.LatLng(37.2850336895, 127.0787149165),
       },
       {
         title: "남양주동물보호협회",
@@ -46,19 +55,15 @@ export default function Shelter() {
         latlng: new kakao.maps.LatLng(37.5256574, 126.8045482),
       },
       {
-        title: "CJ동물병원",
+        title: "cj동물병원",
         latlng: new kakao.maps.LatLng(37.50029663, 126.7751273),
       },
       {
-        title: "펫토피아동물병원",
+        title: "펫앤쉘터동물병원",
         latlng: new kakao.maps.LatLng(37.3670017, 127.1276345),
       },
       {
-        title: "수원시동물보호센터",
-        latlng: new kakao.maps.LatLng(37.28501037, 127.0786968),
-      },
-      {
-        title: "시흥시동물누리보호센터",
+        title: "시흥동물누리보호센터",
         latlng: new kakao.maps.LatLng(37.37405365, 126.7427931),
       },
       {
@@ -66,7 +71,7 @@ export default function Shelter() {
         latlng: new kakao.maps.LatLng(37.3401156, 126.8700487),
       },
       {
-        title: "스타동물병원",
+        title: "스타캣츠",
         latlng: new kakao.maps.LatLng(37.3135805, 126.8367508),
       },
       {
@@ -78,42 +83,41 @@ export default function Shelter() {
         latlng: new kakao.maps.LatLng(37.8700531, 831861),
       },
       {
-        title: "양평군동물보호센터",
+        title: "양평군유기동물보호소",
         latlng: new kakao.maps.LatLng(37.51079775, 127.5142953),
       },
       {
-        title: "위더스동물메디컬센터 부설동물보호센터",
+        title: "위더스 동물보호센터",
         latlng: new kakao.maps.LatLng(37.297553, 127.5756334),
       },
       {
-        title: "오산시 수의사회",
+        title: "오산 유기동물보호소",
         latlng: new kakao.maps.LatLng(37.149051, 127.065149),
       },
       {
-        title: "용인시동물보호센터",
+        title: "용인시 동물보호센터",
         latlng: new kakao.maps.LatLng(37.243299, 127.1591338),
       },
       {
-        title: "파주시 수의사회",
-        latlng: new kakao.maps.LatLng(37.86064623, 126.7781643),
+        title: "나은동물병원",
+        latlng: new kakao.maps.LatLng(37.7659558096, 126.7753889745),
       },
       {
-        title: "농업회사법인 주식회사 달래",
-        latlng: new kakao.maps.LatLng(37.13063033, 127.0554225),
+        title: "평택시유기동물보호소",
+        latlng: new kakao.maps.LatLng(37.1306281469, 127.0554235932),
       },
       {
         title: "하남동물병원",
         latlng: new kakao.maps.LatLng(37.5371145, 127.204029),
       },
       {
-        title: "남양유기견보호센터",
+        title: "남양동물보호센터",
         latlng: new kakao.maps.LatLng(37.22494992, 126.8434243),
       },
     ];
 
     // 마커 이미지의 이미지 주소입니다
-    const imageSrc =
-      "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+    const imageSrc = "https://cdn-icons-png.flaticon.com/512/3010/3010995.png";
 
     // 마커 이미지의 이미지 크기 입니다
     const imageSize = new kakao.maps.Size(24, 35);
@@ -130,40 +134,14 @@ export default function Shelter() {
         image: markerImage, // 마커 이미지
       });
       kakao.maps.event.addListener(marker, "click", function () {
-        // 클릭한 위도, 경도 정보를 가져옵니다
-        // console.log(marker.Gb);
-        // fetch(
-        //   `https://openapi.gg.go.kr/AbdmAnimalProtect?KEY=029f99a01fbb42dba52abb947db9975e&Type=json&SHTER_NM=${marker.Gb}&STATE_NM=보호중&pSize=20`
-        // )
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     //데이터 없는 경우가 많아서 꼭 확인해야 한다.
-        //     setPets(
-        //       data.AbdmAnimalProtect ? data.AbdmAnimalProtect[1].row : []
-        //     );
-        //     // setCount(
-        //     //   data.AbdmAnimalProtect
-        //     //     ? data.AbdmAnimalProtect[0].head[0].list_total_count
-        //     //     : ""
-        //     // );
-        //   });
         setShelter(marker.Gb);
-        fetch(`data/shelterPets.json`)
-          .then((res) => res.json())
-          .then((data) => {
-            //데이터 없는 경우가 많아서 꼭 확인해야 한다.
-            setPets(
-              data.AbdmAnimalProtect ? data.AbdmAnimalProtect[1].row : []
-            );
-            // setCount(
-            //   data.AbdmAnimalProtect
-            //     ? data.AbdmAnimalProtect[0].head[0].list_total_count
-            //     : ""
-            // );
-          });
+        getShelterPets(shelter).then((data) => {
+          setPets(data.length === 0 ? [] : data[1].row);
+          setCount(data.length === 0 ? "0" : data[0].head[0].list_total_count);
+        });
       });
     }
-  }, []);
+  }, [shelter]);
 
   return (
     <div className="shelter-container">
@@ -173,6 +151,7 @@ export default function Shelter() {
           <span>{shelter}</span>에서 친구들이 기다리고 있어요
         </p>
       )}
+      {pets.length === 0 && <NoResult />}
       <Pets pets={pets} />
     </div>
   );
