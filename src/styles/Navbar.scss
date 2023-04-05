@@ -38,6 +38,31 @@
       justify-content: space-between;
       list-style: none;
       gap: 1rem;
+      transition: all 0.3s;
+
+      @media (max-width: 768px) {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        width: 100vw;
+        top: 8rem;
+        gap: 4rem;
+        background-color: #ffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-top: 4rem;
+        // background: red;
+
+        &.open {
+          transform: translateX(0);
+        }
+
+        &.closed {
+          transform: translateX(-100%);
+        }
+      }
 
       li {
         font-size: 1.5rem;
@@ -49,6 +74,26 @@
 
         &:hover {
           color: #ff4d30;
+        }
+      }
+    }
+    .menu {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+
+        .icon {
+          font-size: 1.5rem;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
     }
