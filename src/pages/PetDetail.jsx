@@ -112,6 +112,7 @@ export default function PetDetail() {
         <Kakao
           lat={REFINE_WGS84_LAT}
           log={REFINE_WGS84_LOGT}
+          shelter={SHTER_NM}
           kind={SPECIES_NM.split(" ")[0]}
         />
       </div>
