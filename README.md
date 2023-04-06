@@ -1,38 +1,47 @@
-＃ 반려견 입양시 유기동물을 쉽게 찾아볼 수 있는 웹사이트 제작
+# PETFRIEND
+<p align="center">
+<img src="https://img.shields.io/badge/made by-smosco-red">
+<img src="https://img.shields.io/badge/React-blue">
+<img src="https://img.shields.io/badge/SCSS-magenta">
+<img src="https://img.shields.io/badge/Open%20Source-🐶-mint">
+</p>
+  
+<img width="100%" alt="thumbnail" src="https://user-images.githubusercontent.com/62870362/230266704-318f82e7-0cc4-4045-9e1d-e1cb5069dc6d.png">
+  
+### 👉 [Live Demo](https://petf.netlify.app)
 
-- Demo: https://petf.netlify.app/
+## **📜요약**
+경기도 데이터 드림의 유기동물 보호 현황 open api를 사용해 경기도 지역의 유기 동물을 시군구, 공고일, 품종에 따라 조회하고 지도 상에서 가까운 보호소를 찾아 유기 동물 입양을 돕는 서비스입니다.
 
-**개발목표**
+1. Skills: React, React Router, SCSS
+2. Use: Postman, 경기도 데이터 드림 유기동물 보호 현황 open api, 카카오맵 api, axios
+3. Deploy: Netlify
 
-- 리액트 컴포넌트를 나누는 기준
-- 네트워크 통신
-- 반응형 웹을 구현
+## **📜페이지별 구현 기능**
+### **1. 홈페이지**
+📌 공고기한이 얼마 남지 않은 유기동물을 반응형 멀티 슬라이더로 보여줍니다.
 
-**사용 기술**
+![multiSlider](https://user-images.githubusercontent.com/62870362/230267750-ebe144e3-bb52-41b0-9604-6da162a72f9a.png)
 
-- react
-- axios
-- kakao map api
-- 경기도 데이터 드림 open api
+📌 공고일, 시군구, 품종 카테고리에 맞는 유기 동물을 조회할 수 있습니다.
 
-**페이지별 구현한 기능 설명**
+![category](https://user-images.githubusercontent.com/62870362/230268002-3a371812-6716-4f63-be2f-f8f9c3e4dc50.png)
 
-- 공고기한이 얼마남지 않은 친구들을 반응형 슬라이더로 보여주고 카테고리 별로 조회 가능한 홈페이지
-  ![](https://i.imgur.com/gAiv1s6.png)
+### **2. 지도 페이지**
 
-- 지도에서 유기동물 보호소의 위치를 클릭하면 보호중인 유기동물을 보여주는 페이지
-  ![](https://i.imgur.com/gAMKCVZ.png)
+📌 카카오맵 상의 유기 동물 보호소 위치를 클릭하면 보호중인 유기 동물을 보여줍니다.
 
-- 유기동물 디테일 페이지
-  ![](https://i.imgur.com/pP15xH0.png)
+![map](https://user-images.githubusercontent.com/62870362/230268840-8e1e9e05-6af0-4b77-8952-03b3981b6e7f.png)
 
-- 다시 보고 싶은 유기동물을 기록해놓은 친구가 되어주세요 페이지
-  ![](https://i.imgur.com/sC1aK3s.png)
+### **2. 유기 동물 디테일 페이지**
 
-**Advanced Feature**
+📌 유기 동물의 이미지, 구체적인 정보를 사용자가 보기 쉽게 테이블로 만들었습니다.
 
-- 카카오맵 상에 보호소의 위치를 보여주고 클릭하면 보호소별로 보호중인 유기동물을 보여줌
-  ![](https://i.imgur.com/I8u4W0m.png)
+![detail](https://user-images.githubusercontent.com/62870362/230269224-cd67d435-8b84-4d7f-b83c-5777ce059e8d.png)
 
-- 멀티 아이템 슬라이더 구현
-  ![](https://i.imgur.com/8mfCZ9p.png)
+### **3. 다시보고 싶은 유기동물 기록 페이지**
+
+📌 Context API를 활용해 다시 보고 싶은 동물 데이터를 글로벌하게 관리해 어디서나 업데이트 할 수 있게 구현했습니다.
+
+![like](https://user-images.githubusercontent.com/62870362/230270215-0253979a-d7d2-4938-ba53-ff39cf059834.png)
+
