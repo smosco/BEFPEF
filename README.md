@@ -9,7 +9,7 @@
   
 <img width="100%" alt="thumbnail" src="https://user-images.githubusercontent.com/62870362/230266704-318f82e7-0cc4-4045-9e1d-e1cb5069dc6d.png">
   
-### 👉 [Live Demo](https://befpef.netlify.app)
+### 👉 [Live Demo](https://befpef.netlify.app/)
 
 ## **📜요약**
 경기도 데이터 드림의 유기동물 보호 현황 open api를 사용해 경기도 지역의 유기 동물을 시군구, 공고일, 품종에 따라 조회하고 지도 상에서 가까운 보호소를 찾아 유기 동물 입양을 돕는 서비스입니다.
