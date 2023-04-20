@@ -2,28 +2,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-block: 8rem;
+  margin-top: 4rem;
 
   button {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
-    margin: 0 10px;
-    border-radius: 6px;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: $p-size;
+    margin: 0 1rem;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: #b7b7b7;
-    color: #eee;
+    background: $text-gray;
+    color: $bg-white;
     border: none;
 
     &:hover {
-      background: #9c9190;
+      background: $text-gray;
     }
 
     &.active {
-      font-weight: 700;
-      background: #ff4d30;
-      color: white;
+      background: $text-orange;
     }
   }
 }

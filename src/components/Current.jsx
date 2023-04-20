@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { agoDate, format } from "../util/DateFormatFn";
 import PetCard from "./PetCard";
 import { getCurrent } from "../api/axios";
 
@@ -18,7 +17,7 @@ export default function Current() {
   }, []);
 
   return (
-    <div className="current-container">
+    <div className="current">
       <h1 className="text-4xl font-bold mb-8">
         <b className="text-[#ff4d30]">" &nbsp;</b>
         공고 기한이 하루 밖에 남지 않은 친구들이에요

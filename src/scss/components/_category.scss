@@ -11,7 +11,7 @@
   }
 
   .category {
-    background-color: #ffff;
+    background-color: $bg-white;
     width: 100%;
     padding: 4rem;
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
@@ -40,11 +40,11 @@
           margin-bottom: 1.2rem;
 
           .icon {
-            color: #ff4d30;
+            color: $text-orange;
           }
 
           b {
-            color: #ff4d30;
+            color: $text-orange;
           }
         }
 
@@ -62,7 +62,7 @@
             padding: 1rem;
             padding-right: 2rem;
             outline: none;
-            color: #ababab;
+            color: $text-gray;
             border: 1px solid #ccd7e6;
             border-radius: 3px;
             cursor: pointer;
@@ -71,7 +71,7 @@
 
         .select {
           font-size: 1.2rem;
-          color: #ababab;
+          color: $text-gray;
           border: 1px solid #ccd7e6;
           border-radius: 3px;
           padding: 1rem;
@@ -86,9 +86,8 @@
         border: none;
         font-size: 1.5rem;
         font-weight: 500;
-        color: white;
-        background-color: #ff4d30;
-        box-shadow: 0 10px 15px rgb(255 83 48 / 35%);
+        color: $bg-white;
+        background-color: $text-orange;
         cursor: pointer;
         transition: all 0.3s;
         border-radius: 0.5rem;

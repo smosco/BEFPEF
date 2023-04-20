@@ -1,8 +1,5 @@
-.slider-container {
-  max-width: 1500px;
-  width: 100%;
-  margin-inline: auto;
-  margin-top: 10rem;
+.slider {
+  margin-top: 4rem;
 
   h2 {
     font-size: 2rem;
@@ -12,7 +9,7 @@
   .slides {
     width: 100%;
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
   }
 
   .button-container {

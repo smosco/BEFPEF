@@ -18,9 +18,10 @@ body {
 }
 
 .container {
+  background-color: $bg-gray;
+  margin: 8rem auto 0 auto !important;
   max-width: 133rem !important;
-  margin: 0 auto !important;
-  padding: 0 2.5rem !important;
+  padding: 0 4rem 4rem 4rem !important;
 }
 
 // scroll bar ------

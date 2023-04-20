@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Category from "../components/Category";
 import Pets from "../components/Pets";
-import Current from "../components/Current";
 import { agoDate } from "../util/DateFormatFn";
 import { getPets } from "../api/axios";
 import NoResult from "../components/NoResult";
@@ -32,7 +31,7 @@ export default function Home() {
   }, [query]);
 
   return (
-    <div className="home-container">
+    <div className="home container">
       {/* <Current /> */}
       <Slider />
       <Category query={query} onChange={handleChange} />

@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import Pagination from "./Pagination";
 import PetCard from "./PetCard";
-// import { useLikes } from "../context/LikeContext";
 
 export default function Pets({ pets }) {
-  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(9);
+  const [postPerPage, setPostPerPage] = useState(12);
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;

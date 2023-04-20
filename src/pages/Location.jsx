@@ -162,7 +162,7 @@ export default function Location() {
   }, [shelter]);
 
   return (
-    <div className="shelter-container">
+    <div className="location container">
       <p>가까운 보호소를 지도상에서 클릭해 주세요!</p>
       <div id="map"></div>
       {shelter && (

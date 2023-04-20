@@ -12,23 +12,27 @@ export default function Slider() {
   const [current, setCurrent] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [postPerPage, setPostPerPage] = useState(() => {
-    if (windowWidth < 768) {
+    if (windowWidth < 520) {
       return "1";
-    } else if (windowWidth < 1024) {
+    } else if (windowWidth < 768) {
       return "2";
-    } else {
+    } else if (windowWidth < 1024) {
       return "3";
+    } else {
+      return "4";
     }
   });
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    if (windowWidth < 768) {
+    if (windowWidth < 520) {
       setPostPerPage("1");
-    } else if (windowWidth < 1024) {
+    } else if (windowWidth < 768) {
       setPostPerPage("2");
-    } else {
+    } else if (windowWidth < 1024) {
       setPostPerPage("3");
+    } else {
+      setPostPerPage("4");
     }
   }, [windowWidth]);
 
@@ -60,8 +64,8 @@ export default function Slider() {
   };
 
   return (
-    <div className="slider-container">
-      <h2>공고기한이 얼마 남지 않은 친구들이에요!</h2>
+    <div className="slider">
+      <h2>공고기한이 하루 남은 친구들이예요!</h2>
       <div className="slides">
         {currentPosts.map((item) => (
           <PetCard key={item.ABDM_IDNTFY_NO} pet={item} />

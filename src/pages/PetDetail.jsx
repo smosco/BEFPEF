@@ -38,7 +38,7 @@ export default function PetDetail() {
   }, []);
 
   return (
-    <div className="description-container">
+    <div className="description container">
       <div className="top">
         <div className="img-container">
           <img src={IMAGE_COURS} alt={ABDM_IDNTFY_NO} />
