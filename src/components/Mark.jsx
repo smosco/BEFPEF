@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useLikes } from "../context/LikeContext";
+import { useMark } from "../context/MarkContext";
 import { RxBookmark, RxBookmarkFilled } from "react-icons/rx";
 
 export default function Mark({ id, pet }) {
-  const { likes, likeItems, handleAdd, handleDelete } = useLikes();
+  const { markIds, markItems, handleAdd, handleDelete } = useMark();
 
   const [mark, setMark] = useState(() => {
-    if (likes.includes(id)) {
+    if (markIds.includes(id)) {
       return true;
     } else {
       return false;
     }
   });
 
-  const toggleLike = () => {
+  const toggleMark = () => {
     if (mark) {
       handleDelete(id);
       setMark((prev) => !prev);
@@ -24,12 +24,12 @@ export default function Mark({ id, pet }) {
   };
 
   useEffect(() => {
-    localStorage.setItem("likes", JSON.stringify(likes));
-    localStorage.setItem("likeItems", JSON.stringify(likeItems));
-  }, [likes, likeItems]);
+    localStorage.setItem("markIds", JSON.stringify(markIds));
+    localStorage.setItem("markItems", JSON.stringify(markItems));
+  }, [markIds, markItems]);
 
   return (
-    <div onClick={toggleLike} className="like">
+    <div onClick={toggleMark} className="mark">
       {mark ? <RxBookmarkFilled className="fill" /> : <RxBookmark />}
     </div>
   );

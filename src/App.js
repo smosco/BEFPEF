@@ -7,7 +7,7 @@ import BeFriend from "./pages/BeFriend";
 import NotFound from "./pages/NotFound";
 import "./scss/main.scss";
 
-import { LikesProvider } from "./context/LikeContext";
+import { MarkProvider } from "./context/MarkContext";
 
 const Layout = () => {
   return (
@@ -40,9 +40,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <LikesProvider>
+    <MarkProvider>
       <RouterProvider router={router} />
-    </LikesProvider>
+    </MarkProvider>
   );
 }
 
