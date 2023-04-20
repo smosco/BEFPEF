@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCurrent } from "../api/axios";
 import PetCard from "./PetCard";
+import { GrNext, GrPrevious } from "react-icons/gr";
 
 export default function Slider() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -71,9 +72,9 @@ export default function Slider() {
           <PetCard key={item.ABDM_IDNTFY_NO} pet={item} />
         ))}
       </div>
-      <div className="button-container">
-        <button onClick={PrevSlide}>Prev</button>
-        <button onClick={NextSlide}>Next</button>
+      <div className="move">
+        <GrPrevious className="icon" onClick={PrevSlide} />
+        <GrNext className="icon" onClick={NextSlide} />
       </div>
     </div>
   );

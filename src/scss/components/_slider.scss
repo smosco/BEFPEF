@@ -12,21 +12,17 @@
     gap: 4rem;
   }
 
-  .button-container {
-    text-align: center;
+  .move {
+    display: flex;
+    justify-content: space-between;
     margin-top: 2rem;
 
-    button {
-      background: transparent;
-      padding: 1rem;
-      margin: 1rem;
-      color: burlywood;
-      border-radius: 10px;
-      border: 1px solid burlywood;
+    .icon {
+      font-size: $h3-size;
       cursor: pointer;
+
       &:hover {
-        background-color: burlywood;
-        color: #fff;
+        transform: scale(1.15);
       }
     }
   }

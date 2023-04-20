@@ -15,7 +15,6 @@ export default function Home() {
   });
   const [pets, setPets] = useState([]);
   const [count, setCount] = useState("");
-  console.log(pets);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +31,6 @@ export default function Home() {
 
   return (
     <div className="home container">
-      {/* <Current /> */}
       <Slider />
       <Category query={query} onChange={handleChange} />
       <p className="count">{count} 마리의 친구들이 기다리고 있어요🐈🐕🦎</p>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { SiDatadog } from "react-icons/si";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { GrHomeRounded, GrLocation, GrBookmark } from "react-icons/gr";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -18,20 +18,23 @@ export default function Navbar() {
     <nav className="navbar">
       <div>
         <Link to="/" className="logo" onClick={scrollToTop}>
-          <SiDatadog className="icon" />
-          <h1>펫프</h1>
+          <h1>BEFPEF</h1>
         </Link>
         <ul className={`links ${open ? "open" : "closed"}`}>
           <li onClick={handleOpen}>
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-              Home
+              <GrHomeRounded className="icon" />
             </Link>
           </li>
           <li onClick={handleOpen}>
-            <Link to="/location">Location</Link>
+            <Link to="/location">
+              <GrLocation className="icon" />
+            </Link>
           </li>
           <li onClick={handleOpen}>
-            <Link to="/beFriend">Be Friend</Link>
+            <Link to="/beFriend">
+              <GrBookmark className="icon" />
+            </Link>
           </li>
         </ul>
         <div className="menu" onClick={handleOpen}>

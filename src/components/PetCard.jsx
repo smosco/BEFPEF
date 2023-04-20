@@ -8,7 +8,6 @@ export default function PetCard({ pet }) {
   const navigate = useNavigate();
   const {
     ABDM_IDNTFY_NO,
-    THUMB_IMAGE_COURS,
     IMAGE_COURS,
     RECEPT_DE,
     SPECIES_NM,

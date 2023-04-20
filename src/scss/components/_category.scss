@@ -1,100 +1,92 @@
-.category-container {
-  max-width: 1500px;
+.category {
+  background-color: $bg-white;
   width: 100%;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  padding: 4rem;
+  border-block: 1px solid $text-black;
+  height: auto;
+  position: relative;
+  z-index: 4;
 
-  h2 {
-    font-size: 2rem;
-  }
+  .form {
+    display: grid;
+    grid-template-rows: repeat(4);
+    gap: 1.5rem;
 
-  .category {
-    background-color: $bg-white;
-    width: 100%;
-    padding: 4rem;
-    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
-    height: auto;
-    position: relative;
-    z-index: 4;
-    border-radius: 5px;
-    color: black;
+    @media (min-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
+    }
 
-    .form {
-      display: grid;
-      grid-template-rows: repeat(4);
-      gap: 1.5rem;
-
-      @media (min-width: 1024px) {
+    .box-form {
+      .label {
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+        font-size: $p-size;
+        margin-bottom: 1.2rem;
+
+        .icon {
+          color: $text-orange;
+        }
+
+        b {
+          color: $text-orange;
+        }
       }
 
-      .box-form {
-        .label {
-          display: flex;
-          align-items: center;
-          font-size: 1.2rem;
-          font-weight: 600;
-          margin-bottom: 1.2rem;
+      .calender {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
 
-          .icon {
-            color: $text-orange;
-          }
-
-          b {
-            color: $text-orange;
-          }
+        @media (min-width: 768px) {
+          flex-direction: row;
         }
 
-        .calender {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-
-          @media (min-width: 768px) {
-            flex-direction: row;
-          }
-
-          .input {
-            font-size: 1.2rem;
-            padding: 1rem;
-            padding-right: 2rem;
-            outline: none;
-            color: $text-gray;
-            border: 1px solid #ccd7e6;
-            border-radius: 3px;
-            cursor: pointer;
-          }
-        }
-
-        .select {
-          font-size: 1.2rem;
-          color: $text-gray;
-          border: 1px solid #ccd7e6;
-          border-radius: 3px;
+        .input {
+          font-size: $p-size;
           padding: 1rem;
+          padding-right: 2rem;
           outline: none;
+          border-radius: 3px;
+          color: $text-black;
+          border: 1px solid $text-black;
           cursor: pointer;
+
+          &:hover {
+            border: 1px solid $text-orange;
+          }
         }
       }
-      .button {
-        padding: 1.2rem;
-        height: fit-content;
-        align-self: self-end;
-        border: none;
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: $bg-white;
-        background-color: $text-orange;
+
+      .select {
+        font-size: $p-size;
+        color: $text-black;
+        border: 1px solid $text-black;
+        border-radius: 3px;
+        padding: 1rem;
+        outline: none;
         cursor: pointer;
-        transition: all 0.3s;
-        border-radius: 0.5rem;
 
         &:hover {
-          transform: scale(1.02);
+          border: 1px solid $text-orange;
         }
+      }
+    }
+    .button {
+      padding: 1.2rem;
+      height: fit-content;
+      align-self: self-end;
+      border: none;
+      font-size: $p-size;
+      font-weight: 500;
+      color: $bg-white;
+      background-color: $text-orange;
+      transition: all 0.1s;
+      border-radius: 3px;
+      border: 1px solid $text-black;
+
+      &:hover {
+        background-color: $text-black;
       }
     }
   }

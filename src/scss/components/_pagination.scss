@@ -7,17 +7,18 @@
   button {
     width: 2.5rem;
     height: 2.5rem;
-    font-size: $p-size;
+    font-size: 1.2rem;
     margin: 0 1rem;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease;
     background: $text-gray;
     color: $bg-white;
     border: none;
+    border: 1px solid $text-black;
 
     &:hover {
-      background: $text-gray;
+      background: $text-black;
     }
 
     &.active {
