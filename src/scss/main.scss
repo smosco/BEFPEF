@@ -1,0 +1,20 @@
+@import "abstracts/variables";
+
+@import "base/reset";
+
+@import "layout/navbar";
+
+@import "components/category";
+@import "components/current";
+@import "components/kakao";
+@import "components/like";
+@import "components/pagination";
+@import "components/petcard";
+@import "components/pets";
+@import "components/slider";
+
+@import "pages/home";
+@import "pages/befriend";
+@import "pages/location";
+@import "pages/noresults";
+@import "pages/petdetail";

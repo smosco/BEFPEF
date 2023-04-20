@@ -1,7 +1,6 @@
 import React from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdLocationOn, MdCategory } from "react-icons/md";
-import "../styles/Category.scss";
 
 const regions = [
   "전체",

@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/Pagination.scss";
 
 export default function Pagination({
   totalPosts,

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Pagination from "./Pagination";
 import PetCard from "./PetCard";
 // import { useLikes } from "../context/LikeContext";
-import "../styles/Pets.scss";
 
 export default function Pets({ pets }) {
   const navigate = useNavigate();

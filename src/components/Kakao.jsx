@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "../styles/Kakao.scss";
 const { kakao } = window;
 
 export default function Kakao({ lat, log, shelter, kind }) {

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { dateFormat, sexFormat, neutFormat } from "../util/format";
-import "../styles/PetDetail.scss";
 import Like from "../components/Like";
 import Kakao from "../components/Kakao";
 

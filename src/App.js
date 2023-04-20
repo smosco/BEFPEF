@@ -5,6 +5,7 @@ import PetDetail from "./pages/PetDetail";
 import Location from "./pages/Location";
 import BeFriend from "./pages/BeFriend";
 import NotFound from "./pages/NotFound";
+import "./scss/main.scss";
 
 import { LikesProvider } from "./context/LikeContext";
 

@@ -3,7 +3,6 @@ import Category from "../components/Category";
 import Pets from "../components/Pets";
 import Current from "../components/Current";
 import { agoDate } from "../util/DateFormatFn";
-import "../styles/Home.scss";
 import { getPets } from "../api/axios";
 import NoResult from "../components/NoResult";
 import Slider from "../components/Slider";

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.scss";
 import { SiDatadog } from "react-icons/si";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 

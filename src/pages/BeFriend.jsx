@@ -1,7 +1,6 @@
 import React from "react";
 import Pets from "../components/Pets";
 import { useLikes } from "../context/LikeContext";
-import "../styles/BeFriend.scss";
 import NoResult from "../components/NoResult";
 
 export default function BeFriend() {

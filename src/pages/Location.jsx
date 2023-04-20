@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Pets from "../components/Pets";
-import "../styles/Location.scss";
 import { getShelterPets } from "../api/axios";
 import NoResult from "../components/NoResult";
 

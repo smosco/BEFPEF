@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCurrent } from "../api/axios";
 import PetCard from "./PetCard";
-import "../styles/Slider.scss";
 
 export default function Slider() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

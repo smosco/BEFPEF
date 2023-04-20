@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dateFormat, sexFormat } from "../util/format";
-import "../styles/PetCard.scss";
 import no from "../asset/no-image.jpg";
 import Like from "./Like";
 export default function PetCard({ pet }) {

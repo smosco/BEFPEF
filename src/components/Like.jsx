@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLikes } from "../context/LikeContext";
 import { HiHeart } from "react-icons/hi";
-import "../styles/Like.scss";
 
 export default function Like({ id, pet }) {
   const { likes, likeItems, handleAdd, handleDelete } = useLikes();
