@@ -58,5 +58,6 @@ export default function Kakao({ lat, log, shelter, kind }) {
       yAnchor: 0.91,
     });
   }, []);
+
   return <div id="map"></div>;
 }

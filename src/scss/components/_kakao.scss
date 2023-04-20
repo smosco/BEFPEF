@@ -5,23 +5,19 @@
   .customoverlay {
     position: relative;
     bottom: 85px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    border-bottom: 2px solid #ffffff;
 
     &:nth-of-type(n) {
-      border: 0;
-      box-shadow: 0px 1px 2px #888;
+      border: 1px solid $text-black;
     }
 
     .title {
       display: block;
       text-align: center;
-      color: white;
-      background: #ff4d30;
+      color: $bg-white;
+      font-weight: 600;
+      background: $text-orange;
       padding: 10px;
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: $p-size;
     }
 
     &:after {
@@ -29,7 +25,7 @@
       position: absolute;
       margin-left: -12px;
       left: 50%;
-      bottom: -12px;
+      bottom: -13px;
       width: 22px;
       height: 12px;
       background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png");

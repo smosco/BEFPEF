@@ -12,10 +12,14 @@ export default function Location() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
     getShelterPets(shelter).then((data) => {
       setPets(data.length === 0 ? [] : data[1].row);
       setCount(data.length === 0 ? "0" : data[0].head[0].list_total_count);
     });
+  }, [shelter]);
+
+  useEffect(() => {
     const mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
         center: new kakao.maps.LatLng(37.3658, 126.988), // 지도의 중심좌표
@@ -120,7 +124,7 @@ export default function Location() {
     ];
 
     // 마커 이미지의 이미지 주소입니다
-    const imageSrc = "https://cdn-icons-png.flaticon.com/512/6395/6395623.png";
+    const imageSrc = "https://www.svgrepo.com/show/495577/pet.svg";
 
     // 마커 이미지의 이미지 크기 입니다
     const imageSize = new kakao.maps.Size(30, 30);
@@ -140,7 +144,7 @@ export default function Location() {
       const content = `<div class ="customoverlay"><span class="title">${positions[i].title}</span>`;
       const position = positions[i].latlng;
       const customOverlay = new kakao.maps.CustomOverlay({
-        map: map, //지우면 마우스 올려놨을때만 보임
+        // map: map, //지우면 마우스 올려놨을때만 보임
         position: position,
         content: content,
         xAnchor: 0.49,
@@ -159,7 +163,7 @@ export default function Location() {
         customOverlay.setMap(null);
       });
     }
-  }, [shelter]);
+  }, []);
 
   return (
     <div className="location container">
