@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
 
-  p {
+  .bookmark {
     text-align: center;
-    margin-block: 1rem;
-    font-size: $h4-size;
+    margin: 4rem 0 2rem 0;
+    font-size: 2rem;
     font-weight: 600;
   }
 

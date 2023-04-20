@@ -8,9 +8,13 @@ export default function MarkList() {
 
   return (
     <div className="container">
-      {markItems.length === 0 && <p>다시보고 싶은 친구들을 추가해주세요!</p>}
+      {markItems.length === 0 && (
+        <p className="bookmark">다시보고 싶은 친구들을 추가해주세요!</p>
+      )}
       {markItems.length === 0 && <img src={noImg} alt="noImg" />}
-      {markItems.length !== 0 && <p>친구들에게 관심을 가져주셔서 감사해요!</p>}
+      {markItems.length !== 0 && (
+        <p className="bookmark">친구들에게 관심을 가져주셔서 감사해요!</p>
+      )}
       <Pets pets={markItems} />
     </div>
   );

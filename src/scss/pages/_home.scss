@@ -1,11 +1,12 @@
 .home.container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 
   .count {
+    margin: 4rem 0 2rem 0;
     text-align: center;
     font-size: 2rem;
+    font-weight: 600;
     color: $text-black;
   }
 }

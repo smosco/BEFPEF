@@ -167,11 +167,11 @@ export default function Location() {
 
   return (
     <div className="location container">
-      <p>가까운 보호소를 지도상에서 클릭해 주세요!</p>
+      <p className="click">가까운 보호소를 클릭해 주세요!👉🏠</p>
       <div id="map"></div>
       {shelter && (
-        <p>
-          <span>{shelter}</span>에서 친구들이 기다리고 있어요
+        <p className="wait">
+          <span>{shelter}</span>에서 친구들이 기다리고 있어요🐈🐕🦎
         </p>
       )}
       {pets.length === 0 && <NoResult />}
