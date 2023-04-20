@@ -14,7 +14,7 @@ export default function Home() {
     SPECIES_NM: "",
   });
   const [pets, setPets] = useState([]);
-  const [count, setCount] = useState("");
+  const [count, setCount] = useState("0");
 
   const handleChange = (e) => {
     const { name, value } = e.target;

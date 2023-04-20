@@ -32,7 +32,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li onClick={handleOpen}>
-            <Link to="/beFriend">
+            <Link to="/marklist">
               <GrBookmark className="icon" />
             </Link>
           </li>

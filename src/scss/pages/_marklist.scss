@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    text-align: center;
+    margin-block: 4rem;
+    font-size: $h4-size;
+    font-weight: 600;
+  }
+
+  img {
+    width: 50%;
+    margin-inline: auto;
+    aspect-ratio: 1/1;
+  }
+}

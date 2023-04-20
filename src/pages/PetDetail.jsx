@@ -38,7 +38,7 @@ export default function PetDetail() {
   }, []);
 
   return (
-    <div className="description container">
+    <div className="detail container">
       <div className="top">
         <div className="img-container">
           <img src={IMAGE_COURS} alt={ABDM_IDNTFY_NO} />
@@ -65,7 +65,7 @@ export default function PetDetail() {
             <div className="row">
               <span>나이 / 체중</span>
               <span>
-                {new Date().getFullYear() - AGE_INFO.slice(0, 4)}살 / &nbsp;
+                {new Date().getFullYear() - AGE_INFO.slice(0, 4) + 1}살 / &nbsp;
                 {BDWGH_INFO.split("(")[0]}kg
               </span>
             </div>
@@ -84,7 +84,7 @@ export default function PetDetail() {
             <div className="row">
               <span>공고기한</span>
               <span>
-                {dateFormat(PBLANC_BEGIN_DE)} {dateFormat(PBLANC_END_DE)}
+                {dateFormat(PBLANC_BEGIN_DE)} ~ {dateFormat(PBLANC_END_DE)}
               </span>
             </div>
             <div className="row">
@@ -107,7 +107,10 @@ export default function PetDetail() {
         </div>
       </div>
       <div className="location">
-        <p>{SHTER_NM} 위치</p>
+        <p>
+          <span>{SHTER_NM}</span>
+          에서 기다리고 있어요!
+        </p>
         <Kakao
           lat={REFINE_WGS84_LAT}
           log={REFINE_WGS84_LOGT}

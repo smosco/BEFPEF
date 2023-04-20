@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import PetDetail from "./pages/PetDetail";
 import Location from "./pages/Location";
-import BeFriend from "./pages/BeFriend";
+import MarkList from "./pages/MarkList";
 import NotFound from "./pages/NotFound";
 import "./scss/main.scss";
 
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         path: "/location",
         element: <Location />,
       },
-      { path: "/beFriend", element: <BeFriend /> },
+      { path: "/marklist", element: <MarkList /> },
     ],
   },
 ]);

@@ -1,12 +1,12 @@
-.container {
-  &.home {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+.home.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
   .count {
     text-align: center;
-    font-size: $p-size;
-    color: $text-gray;
+    font-size: 2rem;
+    color: $text-black;
+    margin-block: 1rem;
   }
 }
