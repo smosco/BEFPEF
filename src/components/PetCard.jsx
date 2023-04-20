@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { dateFormat, sexFormat } from "../util/format";
-import Like from "./Like";
+import Mark from "./Mark";
 import no from "../asset/no-image.jpg";
 
 export default function PetCard({ pet }) {
@@ -24,7 +24,7 @@ export default function PetCard({ pet }) {
         <span>고유번호 &nbsp;</span>
         <span>{ABDM_IDNTFY_NO}</span>
   </div>*/}
-      <Like id={ABDM_IDNTFY_NO} pet={pet} />
+
       <div className="box">
         <div
           className="img-container"
@@ -35,6 +35,7 @@ export default function PetCard({ pet }) {
           <img src={`${IMAGE_COURS ? IMAGE_COURS : no}`} alt={ABDM_IDNTFY_NO} />
         </div>
         <div className="description">
+          <Mark id={ABDM_IDNTFY_NO} pet={pet} />
           <div className="row">
             <span>접수일시</span>
             <span>{dateFormat(RECEPT_DE)}</span>

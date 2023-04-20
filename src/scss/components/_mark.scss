@@ -1,0 +1,17 @@
+.like {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1rem;
+  right: 2rem;
+
+  font-size: $h4-size;
+
+  .fill {
+    color: $text-orange;
+  }
+}

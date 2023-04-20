@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useLikes } from "../context/LikeContext";
-import { HiHeart } from "react-icons/hi";
+import { RxBookmark, RxBookmarkFilled } from "react-icons/rx";
 
-export default function Like({ id, pet }) {
+export default function Mark({ id, pet }) {
   const { likes, likeItems, handleAdd, handleDelete } = useLikes();
 
-  const [like, setLike] = useState(() => {
+  const [mark, setMark] = useState(() => {
     if (likes.includes(id)) {
       return true;
     } else {
@@ -14,12 +14,12 @@ export default function Like({ id, pet }) {
   });
 
   const toggleLike = () => {
-    if (like) {
+    if (mark) {
       handleDelete(id);
-      setLike((prev) => !prev);
+      setMark((prev) => !prev);
     } else {
       handleAdd(id, pet);
-      setLike((prev) => !prev);
+      setMark((prev) => !prev);
     }
   };
 
@@ -30,7 +30,7 @@ export default function Like({ id, pet }) {
 
   return (
     <div onClick={toggleLike} className="like">
-      <HiHeart className={`heart ${like ? "t" : "f"}`} />
+      {mark ? <RxBookmarkFilled className="fill" /> : <RxBookmark />}
     </div>
   );
 }

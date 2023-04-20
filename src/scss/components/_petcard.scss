@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  position: relative;
   background-color: $bg-white;
   height: auto;
   border: 1px solid $text-black;
@@ -34,8 +33,10 @@
       cursor: pointer;
       img {
         width: 100%;
-        aspect-ratio: 1 / 0.8;
+        aspect-ratio: 1 / 0.9;
         object-fit: cover;
+
+        border-bottom: 1px solid $text-black;
       }
     }
 
@@ -43,6 +44,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      position: relative;
       padding: 1rem 2rem;
       font-size: 1.2rem;
       .row {

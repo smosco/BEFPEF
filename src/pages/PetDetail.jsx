@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { dateFormat, sexFormat, neutFormat } from "../util/format";
-import Like from "../components/Like";
 import Kakao from "../components/Kakao";
+import Mark from "../components/Mark";
 
 export default function PetDetail() {
   const {
@@ -42,7 +42,7 @@ export default function PetDetail() {
       <div className="top">
         <div className="img-container">
           <img src={IMAGE_COURS} alt={ABDM_IDNTFY_NO} />
-          <Like id={ABDM_IDNTFY_NO} pet={pet} />
+          <Mark id={ABDM_IDNTFY_NO} pet={pet} />
         </div>
         <div className="description">
           <div className="noticeNo">
