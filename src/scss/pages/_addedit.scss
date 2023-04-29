@@ -1,0 +1,44 @@
+.add {
+  h2 {
+    margin: 4rem auto 2rem auto;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    input,
+    textarea {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $text-black;
+      background-color: transparent;
+      padding: 0.5rem 1rem;
+      font-size: $p-size;
+    }
+
+    button {
+      background-color: $text-orange;
+      color: white;
+      font-size: $p-size;
+      font-weight: 600;
+      padding: 0.7rem;
+      border: 1px solid $text-black;
+      transition: all 0.03s ease-in;
+
+      &:hover {
+        background-color: $text-black;
+      }
+    }
+  }
+
+  img {
+    width: 50%;
+    margin-inline: auto;
+    aspect-ratio: 1/1;
+  }
+}

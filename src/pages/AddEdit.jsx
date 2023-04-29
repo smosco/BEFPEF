@@ -86,8 +86,8 @@ export default function AddEdit() {
   };
 
   return (
-    <div className="container">
-      <h2>{postId ? "EditPost" : "Add User"}</h2>
+    <div className="add container">
+      <h2>{postId ? "글 수정하기" : "글 쓰기"}</h2>
       {success && <p>✅{success}</p>}
       {postId && !file && <img src={data.img} alt="cloudinary file" />}
       {file && <img src={URL.createObjectURL(file)} alt="local file" />}
@@ -108,23 +108,25 @@ export default function AddEdit() {
           required
           onChange={handleChange}
         />
-        <input
+        <textarea
           type="text"
           name="desc"
           value={data.desc}
-          placeholder="상세설명"
+          placeholder="-특징&#13;&#10;-상태&#13;&#10;자세한 정보를 적어주시면 더 빨리 찾을 수 있습니다."
           required
           onChange={handleChange}
-        />
+        ></textarea>
+        
         <input
           type="text"
           name="contact"
           value={data.contact}
-          placeholder="연락처"
+          placeholder="연락처 000-0000-0000"
           required
           onChange={handleChange}
         />
         <input
+          className="file-input"
           type="file"
           name="file"
           accept="image/*"
