@@ -1,0 +1,32 @@
+.postcard {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  border-bottom: 1px solid $text-black;
+  cursor: pointer;
+
+  tr {
+    display: flex;
+    width: 100%;
+
+    .img-container {
+      width: 10%;
+      height: fit-content;
+
+      img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+    }
+
+    .preview {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      font-size: $p-size;
+    }
+  }
+}

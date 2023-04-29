@@ -19,7 +19,17 @@ export default function Board() {
       .finally(() => setLoading(false));
   }, []);
   return (
-    <div>
+    <div className="board container">
+      <p>동물을 찾습니다!</p>
+      <thead>
+        <tr>
+          <th>사진</th>
+          <th>제목</th>
+          <th>발견장소</th>
+          <th>작성자</th>
+          <th>시간</th>
+        </tr>
+      </thead>
       {posts?.map((item) => (
         <PostCard key={item.postId} post={item} />
       ))}

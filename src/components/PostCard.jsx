@@ -7,16 +7,21 @@ export default function PostCard({ post }) {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <img
-        src={img}
-        alt="img"
-        onClick={() => navigate(`/${postId}`, { state: { post } })}
-      />
-      <div>{writer}</div>
-      <div>{title}</div>
-      <div>{location}</div>
-      <div>{timestamp.seconds}</div>
-    </div>
+    <tbody
+      className="postcard"
+      onClick={() => navigate(`/${postId}`, { state: { post } })}
+    >
+      <tr>
+        <td className="img-container">
+          <img src={img} alt="img" />
+        </td>
+        <td className="preview">
+          <div>{title}</div>
+          <div>{location}</div>
+          <div>{writer}</div>
+          <div>{timestamp.seconds}</div>
+        </td>
+      </tr>
+    </tbody>
   );
 }

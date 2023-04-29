@@ -1,0 +1,22 @@
+.board {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    text-align: center;
+    margin: 4rem 0 2rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  thead {
+    background-color: $bg-white;
+    border-block: 1px solid $text-black;
+    padding: 1rem 2rem;
+    tr {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.3rem;
+    }
+  }
+}

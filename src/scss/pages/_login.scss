@@ -1,11 +1,11 @@
-.register {
+.login {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $bg-gray;
 
-  .register-container {
+  .login-container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;

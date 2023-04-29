@@ -21,13 +21,15 @@ export default function Login() {
   };
 
   return (
-    <div className="container">
-      <div>
+    <div className="login">
+      <div className="login-container">
+        <h3>BEFPEF 로그인</h3>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
             name="email"
             value={user.email}
+            required
             placeholder="email"
             onChange={handleChange}
           />
@@ -35,13 +37,14 @@ export default function Login() {
             type="password"
             name="password"
             value={user.password}
+            required
             placeholder="password"
             onChange={handleChange}
           />
           <button> 로그인</button>
         </form>
         <p>
-          You don't have an accout? <Link to="/register">회원가입</Link>
+          계정이 없으신가요? <Link to="/register">회원가입</Link>
         </p>
       </div>
     </div>

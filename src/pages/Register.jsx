@@ -20,34 +20,37 @@ export default function Register() {
       .catch((err) => console.log(err.message));
   };
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="displayName"
-          value={user.displayName}
-          placeholder="display name"
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          value={user.email}
-          placeholder="email"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          value={user.password}
-          placeholder="password"
-          onChange={handleChange}
-        />
-        <button> 회원가입</button>
-      </form>
-      <p>
-        You do have an accout? <Link to="/login">로그인</Link>
-      </p>
+    <div className="register">
+      <div className="register-container">
+        <h3>BEFPEF 회원가입</h3>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="displayName"
+            value={user.displayName}
+            placeholder="display name"
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            value={user.email}
+            placeholder="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            value={user.password}
+            placeholder="password"
+            onChange={handleChange}
+          />
+          <button> 회원가입</button>
+        </form>
+        <p>
+          계정이 있으신가요? <Link to="/login">로그인</Link>
+        </p>
+      </div>
     </div>
   );
 }

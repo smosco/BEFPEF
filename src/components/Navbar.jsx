@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { GrHomeRounded, GrLocation, GrBookmark } from "react-icons/gr";
+import { BsPerson } from "react-icons/bs";
 
 export default function Navbar() {
   const { user, logout } = useAuthContext();
@@ -48,17 +49,19 @@ export default function Navbar() {
             </Link>
           </li>
           <li onClick={handleOpen}>
-            <Link to="/board">board</Link>
+            <Link to="/board">게시판</Link>
           </li>
           <li onClick={handleOpen}>
-            <Link to="/mypage">mypage</Link>
+            <Link to="/mypage">
+              <BsPerson className="icon" />
+            </Link>
           </li>
           {user ? (
             <button onClick={logout}>로그아웃</button>
           ) : (
             <Link to="/login">로그인</Link>
           )}
-          <button onClick={handleClick}>write</button>
+          <button onClick={handleClick}>글쓰기</button>
         </ul>
         <div className="menu" onClick={handleOpen}>
           {open ? (
