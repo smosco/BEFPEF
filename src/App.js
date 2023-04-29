@@ -1,9 +1,15 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import PetDetail from "./pages/PetDetail";
 import Location from "./pages/Location";
 import MarkList from "./pages/MarkList";
+import Board from "./pages/Board";
+import Post from "./pages/Post";
+import AddEdit from "./pages/AddEdit";
+import MyPage from "./pages/MyPage";
 import NotFound from "./pages/NotFound";
 import "./scss/main.scss";
 
@@ -34,8 +40,18 @@ const router = createBrowserRouter([
         element: <Location />,
       },
       { path: "/marklist", element: <MarkList /> },
+      { path: "/board", element: <Board /> },
+      { path: "/:postId", element: <Post /> },
+      {
+        path: "/add",
+        element: <AddEdit />,
+      },
+      { path: "/update/:postId", element: <AddEdit /> },
+      { path: "/mypage", element: <MyPage /> },
     ],
   },
+  { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
 ]);
 
 function App() {

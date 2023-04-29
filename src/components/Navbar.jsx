@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuthContext } from "../context/AuthContext";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { GrHomeRounded, GrLocation, GrBookmark } from "react-icons/gr";
 
 export default function Navbar() {
+  const { user, logout } = useAuthContext();
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    if (user) {
+      navigate("/add");
+    } else {
+      alert("로그인이 필요합니다");
+      navigate("/login");
+    }
+  };
   const handleOpen = () => {
     setOpen((prev) => !prev);
   };
@@ -36,6 +47,18 @@ export default function Navbar() {
               <GrBookmark className="icon" />
             </Link>
           </li>
+          <li onClick={handleOpen}>
+            <Link to="/board">board</Link>
+          </li>
+          <li onClick={handleOpen}>
+            <Link to="/mypage">mypage</Link>
+          </li>
+          {user ? (
+            <button onClick={logout}>로그아웃</button>
+          ) : (
+            <Link to="/login">로그인</Link>
+          )}
+          <button onClick={handleClick}>write</button>
         </ul>
         <div className="menu" onClick={handleOpen}>
           {open ? (
