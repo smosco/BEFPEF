@@ -31,16 +31,20 @@ export default function Post() {
   };
 
   return (
-    <div className="container">
-      <img src={img} alt="img" />
-      <div>{title}</div>
-      <div>{writer}</div>
-      <div>{location}</div>
-      <div>{desc}</div>
-      <div>{contact}</div>
-      <div>{timestamp.seconds}</div>
+    <div className="post">
+      <div className="img-container">
+        <img src={img} alt="img" />
+      </div>
+      <div className="text">
+        <h2>{title}</h2>
+        <p>{writer}</p>
+        <p>{location}</p>
+        <p>{desc}</p>
+        <p>{contact}</p>
+        <p>{timestamp.seconds}</p>
+      </div>
       {user?.uid === writerId && (
-        <div>
+        <div className="button-container">
           <button onClick={() => navigate(`/update/${postId}`)}>수정</button>
           <button onClick={handleDelete}>삭제</button>
         </div>

@@ -1,0 +1,47 @@
+.post {
+  max-width: 72rem;
+  margin-inline: auto;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .img-container {
+    width: 100%;
+    margin-top: 4rem;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      border: 1px solid $text-black;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: $p-size;
+
+    h2 {
+      font-size: $h3-size;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      background-color: $text-orange;
+      color: $bg-white;
+      padding: 0.7rem;
+      border-radius: 0.8rem;
+      font-size: $p-size;
+
+      &:hover {
+        background-color: $text-black;
+      }
+    }
+  }
+}
