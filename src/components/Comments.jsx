@@ -33,7 +33,7 @@ export default function Comments({ user, postId }) {
       ...comment,
       timeStamp: new Date(),
     });
-    updateComments(user, postId, comments, comment);
+    updateComments(postId, comments, comment);
     setComments([...comments, comment]);
     setComment(initialState);
   };
