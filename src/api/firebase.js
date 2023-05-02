@@ -139,7 +139,7 @@ export const getPostsById = async (userId) => {
   return posts;
 };
 
-export const updateComments = async (user, postId, comments, comment) => {
+export const updateComments = async (postId, comments, comment) => {
   const commentsRef = doc(store, "posts", postId);
   //await setDoc(commentsRef, {
   //    name: "Frank",
@@ -152,13 +152,14 @@ export const updateComments = async (user, postId, comments, comment) => {
   await updateDoc(commentsRef, {
     comments: [
       ...comments,
-      {
-        id: postId + uuidv4(),
-        writer: user.displayName,
-        writerId: user.uid,
-        text: comment,
-        timeStamp: new Date(),
-      },
+      comment,
+      // {
+      //   id: postId + uuidv4(),
+      //   writer: user.displayName,
+      //   writerId: user.uid,
+      //   text: comment,
+      //   timeStamp: new Date(),
+      // },
     ],
     //"favorites.color": "Red",
   });

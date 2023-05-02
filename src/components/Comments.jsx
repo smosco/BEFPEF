@@ -1,24 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { updateComments, getPostComments } from "../api/firebase";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Comments({ user, postId }) {
-  const [comment, setComment] = useState("");
+  const initialState = {
+    id: postId + uuidv4(),
+    writer: user.displayName,
+    writerId: user.uid,
+    text: "",
+  };
+  const [comment, setComment] = useState(initialState);
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    getPostComments(postId).then((res) => setComments(res));
-  }, [comments, postId]);
+    const getComments = setTimeout(() => {
+      console.log("댓글모음을 가져오는 중");
+      getPostComments(postId).then((res) => setComments(res));
+    }, 500);
 
-  //무한으로 읽히는데 해결방법 없나..
-  console.log(comments);
+    return () => {
+      console.log("클린업 함수 실행");
+      clearTimeout(getComments);
+    };
+  }, [comment, postId]); //의존성에 당연히 comments를 넣으면 무한 루프돌지
 
   const handleChange = (e) => {
-    setComment(e.target.value);
+    setComment({ ...comment, text: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setComment({
+      ...comment,
+      timeStamp: new Date(),
+    });
     updateComments(user, postId, comments, comment);
-    setComment("");
+    setComments([...comments, comment]);
+    setComment(initialState);
   };
   return (
     <div>
@@ -27,7 +44,7 @@ export default function Comments({ user, postId }) {
         <input
           type="text"
           placeholder="댓글입력"
-          value={comment}
+          value={comment.text}
           onChange={handleChange}
         />
       </form>

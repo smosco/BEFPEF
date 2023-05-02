@@ -49,7 +49,7 @@ export default function Post() {
           <button onClick={handleDelete}>삭제</button>
         </div>
       )}
-      {/* <Comments user={user} postId={postId} /> */}
+      <Comments user={user} postId={postId} />
     </div>
   );
 }
