@@ -34,7 +34,6 @@ export default function Comments({ user, postId }) {
       timeStamp: new Date(),
     });
     updateComments(postId, comments, comment);
-    setComments([...comments, comment]);
     setComment(initialState);
   };
   return (
@@ -49,7 +48,10 @@ export default function Comments({ user, postId }) {
         />
       </form>
       {comments.map((item) => (
-        <div key={item.id}>{item.text}</div>
+        <div key={item.id}>
+          {item.writer}
+          {item.text}
+        </div>
       ))}
     </div>
   );
